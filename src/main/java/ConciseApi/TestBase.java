@@ -1,3 +1,5 @@
+package ConciseApi;
+
 import com.codeborne.selenide.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
