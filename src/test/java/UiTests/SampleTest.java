@@ -11,10 +11,9 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class SampleTest extends TestBase {
 
-@Test
+    @Test
     public void sample() {
-    Configuration.browser = "chrome";
-    open("https://www.google.com/");
-    $(By.xpath("//img[@alt='День осеннего равноденствия']")).shouldBe(visible);
-}
+        open("https://www.google.com/");
+        $(By.xpath("//img[@alt='День осеннего равноденствия']")).shouldBe(visible);
+    }
 }

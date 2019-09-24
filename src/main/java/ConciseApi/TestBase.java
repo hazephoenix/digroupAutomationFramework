@@ -1,23 +1,27 @@
 package ConciseApi;
 
 import com.codeborne.selenide.*;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.After;
+import org.junit.Before;
+
 
 public class TestBase {
 
-
-
-    @BeforeEach
+    @Before
     public void init() {
-        Configuration.baseUrl = "127.0.0.1";
-        System.out.println("init compl;fl   eted");
+        WebDriverManager.chromedriver().setup();
+        Configuration.browser = "chrome";
+        System.out.println("init completed");
     }
 
 
-    @AfterEach
+    @After
     public void tearDown() {
-        System.out.println("tearDown completed");
+        if(WebDriverRunner.getWebDriver()!= null) {
+            WebDriverRunner.getWebDriver().quit();
+        }
 
+        System.out.println("tearDown completed");
     }
 }
