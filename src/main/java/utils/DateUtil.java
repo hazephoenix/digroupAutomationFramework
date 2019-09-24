@@ -5,10 +5,6 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class DateUtil {
-    public static void main(String[] args) {
-        String s = todayDateTime();
-        System.out.println(s);
-    }
 
     public static String todayDate() {
         return LocalDate.now().format(DateTimeFormatter.ofPattern(

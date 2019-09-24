@@ -10,7 +10,7 @@ public class MapUtil {
     }
 
 
-    public static Map<String, String> map (Entry... entries) {
+    public static Map<?, ?> map (Entry... entries) {
         return populate(new LinkedHashMap<>(), entries);
     }
 
