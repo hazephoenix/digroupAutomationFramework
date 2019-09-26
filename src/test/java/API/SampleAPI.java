@@ -1,6 +1,7 @@
 package API;
 
 import ConciseApi.Api.TestBaseApi;
+import io.restassured.response.Response;
 import org.hamcrest.Matchers;
 import org.junit.Test;
 
@@ -12,21 +13,10 @@ public class SampleAPI extends TestBaseApi {
 
     @Test
     public void sample() {
-
-        when().
+        Response resp = when().
                 get("api/people/1").
-                then().
-                statusCode(200);
+                then().extract().response();
 
-
-
-        /*given().
-                contentType("application/json").
-                accept("application.json").
-                body(null).
-                when().
-                get("/complete/search?q&cp=0&client=psy-ab&xssi=t&gs_ri=gws-wiz&hl=ru&authuser=0&pq=selenide&psi=l5yJXcagOO3IrgSPzpr4Dg.1569299609741&ei=l5yJXcagOO3IrgSPzpr4Dg").
-                then().*/
 
     }
 

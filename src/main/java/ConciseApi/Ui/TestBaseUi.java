@@ -15,7 +15,6 @@ public class TestBaseUi {
         System.out.println("init completed");
     }
 
-
     @After
     public void tearDown() {
         if(WebDriverRunner.getWebDriver()!= null) {
